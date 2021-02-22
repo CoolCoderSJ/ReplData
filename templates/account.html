@@ -1,0 +1,59 @@
+$def with (user, token, repls, names, msg)
+
+<!DOCTYPE html>
+<html>
+	<title>REPLDATA ACCOUNT</title>
+	<link rel="stylesheet" href="https://rbotcss.coolcodersj.repl.co/style.css">
+<style>
+			form {
+				padding: 20px;
+			}
+			body {
+				padding-top: 110px;
+			}
+		</style>
+	<div class="topnav text">
+		<a class="brand" href="#">ReplData</a>
+		<div class="topnavitem">
+		 <a class="topnavitem" href="/">Home</a>
+  <a class="topnavitem active" href="/account">My Account</a>
+  <a class="topnavitem" href="/login">Login</a>
+  <a class="topnavitem" href="/signup">Signup</a>
+  <a class="topnavitem" href="/apidoc">Tracking Docs</a>
+ 
+  </div>
+</div> 
+
+<h1>$user</h1>
+<hr>
+<h4>Your token - </h4>
+<input class="input" value="$token" readonly></input>
+<hr>
+<table style="width:100%" class="text">
+  <tr>
+    <th>Repl Name</th>
+    <th>ReplData Repl ID</th>
+  </tr>
+  $for repl in names:
+	<tr>
+		<form method="post" action="delete">
+		<td><a href="https://ReplData.coolcodersj.repl.co/repl/$repl[1]">$repl[0]</a></td>
+		<td>$repl[1]</td>
+		<td><button type="submit" style="width: 100%">Delete</button></td>
+		<input type="hidden" name="id" value="$repl[1]">
+		</form>
+	</tr>
+</table> 
+<br>
+<br>
+<hr>
+<h4>Track another repl</h4>
+<form class="text" method="post" action="account">
+	<input class="input" name="name" placeholder="Enter exact repl name"></input>
+</form>
+
+$if msg != "":
+	<h5 class="success">$:msg</h5>
+
+<h4 class="alert">Just as a reminder, be sure to include a privacy policy in your repls so that you notify your users that you are tracking them.</h4>
+</html>

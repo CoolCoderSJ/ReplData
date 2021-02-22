@@ -1,0 +1,38 @@
+$def with (repl)
+
+<!DOCTYPE html>
+<html>
+	<title>REPL -- $repl['name']</title>
+	<link rel="stylesheet" href="https://rbotcss.coolcodersj.repl.co/style.css">
+<style>
+			form {
+				padding: 20px;
+			}
+			body {
+				padding-top: 110px;
+			}
+		</style>
+	<div class="topnav text">
+		<a class="brand" href="#">ReplData</a>
+		<div class="topnavitem">
+		 <a class="topnavitem" href="/">Home</a>
+  <a class="topnavitem" href="/account">My Account</a>
+    <a class="topnavitem" href="/login">Login</a>
+  <a class="topnavitem" href="/signup">Signup</a>
+  <a class="topnavitem" href="/apidoc">Tracking Docs</a>
+ 
+  </div>
+</div> 
+$ url = "https://repl.it/@" + repl['user'] + "/" + repl['name'].replace(" ", "-") + "?lite=true&outputonly=1"
+
+<h1>$repl['name']</h1>
+<h5> By $repl['user']</h5>
+<iframe height="400px" width="100%" src="$url" scrolling="no" frameborder="no" allowtransparency="true" allowfullscreen="true" sandbox="allow-forms allow-pointer-lock allow-popups allow-same-origin allow-scripts allow-modals"></iframe>
+
+<h4> Total number of runs- $len(repl['users']) </h4>
+<h4> Run by -</h4>
+<ul>
+	$for run in repl['users']:
+		<li>$run</li>
+</ul>
+</html>

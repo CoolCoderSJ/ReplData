@@ -1,0 +1,49 @@
+$def with (msg)
+<!DOCTYPE html>
+<html>
+			<link rel="icon" 
+      type="image/ico" 
+      href="https://sjurl.repl.co/static/images/favicon.ico">
+	<link rel="stylesheet" href="https://rbotcss.coolcodersj.repl.co/style.css">
+
+	<div class="topnav text">
+		<a class="brand" href="#">ReplData</a>
+		<div class="topnavitem">
+		 <a class=" topnavitem" href="/">Home</a>
+  <a class="topnavitem" href="/account">My Account</a>
+    <a class="topnavitem" href="/login">Login</a>
+  <a class="topnavitem active" href="/signup">Signup</a>
+  <a class="topnavitem" href="/apidoc">Tracking Docs</a>
+ 
+  </div>
+  $if msg != "":
+	<h5 class="alert">$msg</h5>
+</div> 
+	<head>
+		<title>SJAUTH -- Signup</title>
+		<style>
+			form {
+				padding: 20px;
+			}
+			body {
+				padding-top: 110px;
+			}
+		</style>
+	</head>
+
+	<body>
+
+		<form method="post" action = "signup">
+
+<h1 class="alert">NOTE: THE PASSWORD CAN BE ANYTHING. THE REPLIT USERNAME IS ONLY USED FOR BUILDING EMBEDS</h1>
+  <div class="form-group">
+    <input type="username" class="input" id="short" name="user"  aria-describedby="emailHelp" placeholder="REPLIT Username" required>
+
+    <input type="password" class="input" id="url" name="passw" required placeholder="Password" required>
+  </div>
+
+	<br>
+  <button type="submit" class="btn btn-primary">Signup</button>
+</form>
+	</body>
+</html>

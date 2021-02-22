@@ -1,0 +1,52 @@
+
+<!DOCTYPE html>
+<html>
+	<title>REPLDATA ACCOUNT</title>
+	<link rel="stylesheet" href="https://rbotcss.coolcodersj.repl.co/style.css">
+<style>
+			form {
+				padding: 20px;
+			}
+			body {
+				padding-top: 110px;
+			}
+		</style>
+	<div class="topnav text">
+		<a class="brand" href="#">ReplData</a>
+		<div class="topnavitem">
+		 <a class="topnavitem" href="/">Home</a>
+  <a class="topnavitem" href="/account">My Account</a>
+    <a class="topnavitem" href="/login">Login</a>
+  <a class="topnavitem" href="/signup">Signup</a>
+  <a class="topnavitem active" href="/apidoc">Tracking Docs</a>
+ 
+  </div>
+</div> 
+<h1>API DOCS</h1>
+<p> To track a repl, just make a <code>GET</code> Request to <code>https://ReplData.coolcodersj.repl.co/api</code> With URL Paramteters <code>ID</code>, <code>TOKEN</code>, and <code>USER</code>. The ID is given on the account page and the TOKEN is also on the account page. The User is a REPL ENV variable called <code>REPL_OWNER</code>. If you are trying to track a web page, just set User to anything you want. Add the following code to the top of your repl's main code. Examples - <p>
+	<br>
+<p>Note: Token cannot be in an env since envs do not carry between different users running them unless it is a web repl. It can be hidden though-set up a web server, and make requests to it to access variables from the servers env.</p>
+<h4 class="alert">Note that the examples are for NodeJS and Python only, but you can use this for any language that supports a <code>GET</code> request.</h4>
+<br><br>
+<h3>Python</h3>
+
+<pre>
+	<code>
+import requests, os
+requests.get(f"https://ReplData.coolcodersj.repl.co/api?ID=REPLDATA_REPL_ID&TOKEN=URTOKEN&USER={os.getenv('REPL_OWNER')}")
+	</code>
+</pre>
+<br><br>
+<h3>NodeJS</h3>
+
+<pre>
+	<code>
+const fetch = require("node-fetch")
+let API = async() = {
+	fetch("https://ReplData.coolcodersj.repl.co/api?ID=REPLDATA_REPL_ID&TOKEN=URTOKEN&USER="+process.env.REPL_OWNER)
+}
+API()
+	</code>
+</pre>
+
+</html>

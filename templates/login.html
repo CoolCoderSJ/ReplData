@@ -1,0 +1,49 @@
+$def with (msg)
+<!DOCTYPE html>
+<html>
+			<link rel="icon" 
+      type="image/ico" 
+      href="https://sjurl.repl.co/static/images/favicon.ico">
+	<link rel="stylesheet" href="https://rbotcss.coolcodersj.repl.co/style.css">
+
+	<div class="topnav text">
+		<a class="brand" href="#">ReplData</a>
+		<div class="topnavitem">
+		 <a class=" topnavitem" href="/">Home</a>
+  <a class="topnavitem" href="/account">My Account</a>
+    <a class="topnavitem active" href="/login">Login</a>
+  <a class="topnavitem" href="/signup">Signup</a>
+  <a class="topnavitem" href="/apidoc">Tracking Docs</a>
+ 
+  </div>
+</div> 
+	<head>
+		<title>SJAUTH -- Login</title>
+		<style>
+			form {
+				padding: 20px;
+			}
+			body {
+				padding-top: 110px;
+			}
+		</style>
+	</head>
+
+$if msg != "":
+	<h5 class="alert">$msg</h5>
+	
+	<body>
+
+<form method="post" action = "login">
+
+<div class="form-group">
+<input type="username" class="input" id="short" name="user"  aria-describedby="emailHelp" placeholder="REPLIT Username" required>
+
+<input type="password" class="input" id="url" name="passw" required placeholder="Password" required>
+</div>
+
+<br>
+<button type="submit" class="btn btn-primary">Login</button>
+</form>
+	</body>
+</html>
